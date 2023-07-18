@@ -26,14 +26,14 @@
     </style>
 </head>
 <body>
-    <h1>Station 18</h1>
+    <h1>WZV Weimar in Figures</h1>
     <div id="question"></div>
     <div id="options"></div>
-    <button onclick="nextQuestion()">SUBMIT</button>
+    <button onclick="nextQuestion()">Submit</button>
     <script>
         // Function to clear the quiz score from local storage
 function clearQuizScore() {
-    localStorage.removeItem("Station_18_Score");
+    localStorage.removeItem("WZV_Weimar");
 }
 
 // Function to clear local storage when the tab is closed or refreshed
@@ -49,13 +49,13 @@ window.addEventListener('beforeunload', function() {
         const quiz = [
             {
                 question: "What type of filtration is used in the open rapid filters at the waterworks?",
-                options: ["Ground filtration", "Rapid filtration", "Depth filtration"],
+                options: ["Ground Filtration", "Rapid Filtration", "Depth Filtration"],
                 answer: 2
             }
         ];
 
         let currentQuestion = 0;
-        let Station_18_Score = 0;
+        let WZV_Weimar = 0;
 
         // Function to display current question
         function displayQuestion() {
@@ -99,9 +99,9 @@ window.addEventListener('beforeunload', function() {
     }
 
     if (!isAnswered || selectedOption !== quiz[currentQuestion].answer) {
-        Station_18_Score = 0; // Assign zero score if question is not attempted or answered incorrectly
+        WZV_Weimar = 0; // Assign zero score if question is not attempted or answered incorrectly
     } else {
-        Station_18_Score++; // Increment score for correct answer
+        WZV_Weimar++; // Increment score for correct answer
     }
 }
 
@@ -112,8 +112,8 @@ window.addEventListener('beforeunload', function() {
 
             if (currentQuestion === quiz.length) {
                 // All questions answered, store score in local storage
-                localStorage.setItem("Station_18_Score", Station_18_Score);
-                alert("Quiz completed. Your score is " + Station_18_Score);
+                localStorage.setItem("WZV_Weimar", WZV_Weimar);
+                alert("Quiz completed. Your score is " + WZV_Weimar);
             } else {
                 displayQuestion();
             }
